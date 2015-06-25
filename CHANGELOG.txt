@@ -1,0 +1,4 @@
+0.1.0 (2015-06-25)
+==================
+
+* initial packaged release. Extracted from https://github.com/ccnmtl/footprints/
