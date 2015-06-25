@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+env:
+  - DJANGO_VERSION=1.7.7
+  - DJANGO_VERSION=1.8.2
+
+# command to install dependencies
+install:
+  - pip install -q Django==$DJANGO_VERSION --use-mirrors
+
+# command to run tests
+script:
+  - python runtests.py
+notifications:
+  slack: ccnmtl:GizSNscLWJLldjQrffB8mwgm
