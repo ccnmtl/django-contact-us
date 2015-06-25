@@ -27,7 +27,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-contact-us",
-    version="0.1.0",
+    version="0.1.1",
     author="Susan Dreher",
     author_email="sdreher@columbia.edu",
     url="https://github.com/ccnmtl/django-contact-us",
@@ -40,5 +40,6 @@ setup(
     zip_safe=False,
     package_data = {'' : ['*.*']},
     packages=['contactus'],
+    include_package_data=True,
     )
     
