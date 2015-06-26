@@ -2,6 +2,7 @@
 ==================
 
 * added smoketest to check for required settings
+* fixed issue with urls.py
 
 0.1.1 (2015-06-25)
 ==================
