@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template import loader
-from django.template.context import Context
 from django.views.generic.edit import FormView
 
 from contactus.forms import ContactUsForm, SUBJECT_CHOICES
@@ -38,7 +37,6 @@ class ContactUsView(FormView):
         recipients = (getattr(settings, 'CONTACT_US_EMAIL'),)
 
         tmpl = loader.get_template(self.email_template_name)
-        send_mail(self.subject, tmpl.render(Context(form_data)), sender,
-                  recipients)
+        send_mail(self.subject, tmpl.render(form_data), sender, recipients)
 
         return super(ContactUsView, self).form_valid(form)
