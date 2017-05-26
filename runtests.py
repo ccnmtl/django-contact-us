@@ -1,7 +1,7 @@
 """ run tests for django-contact-us
 
 $ virtualenv ve
-$ ./ve/bin/pip install Django==1.8
+$ ./ve/bin/pip install Django
 $ ./ve/bin/python runtests.py
 """
 
@@ -20,6 +20,11 @@ def main():
             'django.contrib.auth.middleware.AuthenticationMiddleware',
             'django.contrib.messages.middleware.MessageMiddleware',
         ),
+
+        TEMPLATES=[{
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'APP_DIRS': True,
+        }],
 
         INSTALLED_APPS=(
             'django.contrib.auth',
