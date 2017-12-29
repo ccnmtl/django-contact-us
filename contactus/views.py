@@ -17,7 +17,7 @@ class ContactUsView(FormView):
 
     def get_initial(self):
         initial = super(ContactUsView, self).get_initial()
-        if not self.request.user.is_anonymous():
+        if not self.request.user.is_anonymous:
             initial['name'] = self.request.user.get_full_name()
             initial['email'] = self.request.user.email
         initial['subject'] = '-----'
@@ -27,7 +27,7 @@ class ContactUsView(FormView):
     def form_valid(self, form):
         form_data = form.cleaned_data
 
-        if not self.request.user.is_anonymous():
+        if not self.request.user.is_anonymous:
             form_data['username'] = self.request.user.username
 
         form_data['subject'] = dict(SUBJECT_CHOICES)[form_data['subject']]
