@@ -1,24 +1,31 @@
 language: python
 sudo: false
 python:
-  - "2.7"
-  - "3.5"
+- '2.7'
+- '3.5'
+- '3.6'
 env:
-  - DJANGO="Django>=1.8.0,<1.9.0"
-  - DJANGO="Django>=1.10.0,<1.11.0"
-  - DJANGO="Django>=1.11.0,<1.12.0"
-
-# command to install dependencies
+- DJANGO="Django>=1.8.0,<1.9.0"
+- DJANGO="Django>=1.10.0,<1.11.0"
+- DJANGO="Django>=1.11.0,<1.12.0"
 install:
-  - pip install -q $DJANGO
-  - pip install flake8
-  - pip install coveralls
-# command to run tests
+- pip install -q $DJANGO
+- pip install flake8
+- pip install coveralls
 script:
-  - flake8 contactus
-  - python runtests.py
-  - coverage run --source=contactus runtests.py
+- flake8 contactus
+- python runtests.py
+- coverage run --source=contactus runtests.py
 notifications:
   slack: ccnmtl:GizSNscLWJLldjQrffB8mwgm
 after_success:
-  - coveralls
+- coveralls
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: ctlpypi
+  password:
+    secure: mXqpr5DjKog+nMVoo2qT3uvuJn+PrXDre3y0pYq6znAYtT0rC9t+r3rWFQXAXx8eaxaLLGQwq/AZtxMdSLJ3QD7/jkXqfPi/PE8THxJBPeVxPLy8sVOpBPQAH2H8kQp/gvlh6mp4pHa1kTM3IIuPxiGECoj+xmTNOkQMkN6pPh93FL0sEKFxL4KQ8GkVujxrqB3Cnfo6slq2cz7/YabsgzPVaP42EJNvEEQ/ZxlDbf+MIh2NQgLnCcdubPJoDkTrh//CWfmb2fFygLHb4IEhDy3JH5VT+6Sg/mcISjCc7IynnYH8AxcmmZPDAiJDlVSTC1nfCNRJu2VRE1tZLMCyP175tdQW5hTGQJxr4Oxm00y9qRbDHX5cskQPT4reejHFNmfKGH7+ZAMWhA2XxEvovh+wLzYkiLq5O5LjbNxTcZVE3Ab3WMCy8wfItwqezHc7Ug2jGFmZiBYnas7HsvUfb8j1Y3Y0qVeIwu9VDzOg9SyxIUJOe/7ElCKmU2k7OJoo0zPvIGa0D7Sn+0f69+hpprtmdDbGhH4PJKi+xQ2FTuVliZ50aCJJ49bbHO7+l89n9G4tuyTIyviQDWZ6kcYOgLRsLM3C+g7MLw05y63PuJUZUi/KIKjQacJIiEP/pL3pE7TPLKyK7I31x38xZyCewxMhTgt3dvXKcsuOyKdOPy4=
+  on:
+    tags: true
+    repo: ccnmtl/django-contact-us
