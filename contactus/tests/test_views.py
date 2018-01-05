@@ -57,6 +57,6 @@ class ContactUsViewTest(TestCase):
         self.assertEqual(mail.outbox[0].subject,
                          view.subject)
         self.assertEquals(mail.outbox[0].from_email,
-                          'sender@ccnmtl.columbia.edu')
+                          'root@localhost')
         self.assertEquals(mail.outbox[0].to,
                           [settings.CONTACT_US_EMAIL])
