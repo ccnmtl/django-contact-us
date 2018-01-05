@@ -27,7 +27,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-contact-us",
-    version="0.4.0",
+    version="0.4.1",
     author="Susan Dreher",
     author_email="sdreher@columbia.edu",
     url="https://github.com/ccnmtl/django-contact-us",
