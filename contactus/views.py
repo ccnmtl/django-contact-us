@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.template import loader
 from django.views.generic.edit import FormView
 
@@ -36,7 +36,16 @@ class ContactUsView(FormView):
         sender = settings.SERVER_EMAIL
         recipients = (getattr(settings, 'CONTACT_US_EMAIL'),)
 
+        reply_to = form_data.get('email') or sender
+
         tmpl = loader.get_template(self.email_template_name)
-        send_mail(self.subject, tmpl.render(form_data), sender, recipients)
+        email = EmailMessage(
+            self.subject,
+            tmpl.render(form_data),
+            sender,
+            recipients,
+            reply_to=[reply_to],
+        )
+        email.send()
 
         return super(ContactUsView, self).form_valid(form)
