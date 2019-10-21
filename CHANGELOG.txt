@@ -1,4 +1,4 @@
-0.4.2
+0.4.2 (2019-10-21)
 ==================
 * Use contact requester's email as Reply-To.
 
