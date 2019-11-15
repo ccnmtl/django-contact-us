@@ -1,3 +1,7 @@
+0.4.3
+==================
+* Make subject choices configurable
+
 0.4.2 (2019-10-21)
 ==================
 * Use contact requester's email as Reply-To.
