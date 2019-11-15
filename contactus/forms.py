@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django import forms
+from django.conf import settings
 
 SUBJECT_CHOICES = (
     ('-----', '-----'),
@@ -8,6 +9,11 @@ SUBJECT_CHOICES = (
     ('bug', 'Correction or bug report'),
     ('other', 'Other (please specify)')
 )
+
+
+if hasattr(settings, 'CONTACTUS_SUBJECT_CHOICES') and \
+   settings.CONTACTUS_SUBJECT_CHOICES:
+    SUBJECT_CHOICES = settings.CONTACTUS_SUBJECT_CHOICES
 
 
 class ContactUsForm(forms.Form):
