@@ -4,17 +4,16 @@
 
 {% block css %}
     <style>
-        .form-group .help-block {
-            display: none;
-        }
-        .form-group.has-error .help-block {
-            display: block;
-        }
-        input[name='decoy'],
-        p.decoy {
-            display: none !important;
-        } 
-
+    .form-group .help-block {
+        display: none;
+    }
+    .form-group.has-error .help-block {
+        display: block;
+    }
+    input[name='decoy'],
+    p.decoy {
+        display: none !important;
+    }
     </style>
 {% endblock %}
 
@@ -24,19 +23,21 @@
         <br />
         <form action="." method="post" name="feedback" class="form-horizontal">{% csrf_token %}
             <div class="form-group {% if form.name.errors %}has-error{% endif %}">
-                <label for="name" class="col-sm-2 control-label">Name</label>
+                <label for="id_name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-6">
                     <input type="text" name="name" class="form-control"
-                    value="{% if form.data.name %}{{form.data.name}}{% else %}{{form.initial.name}}{% endif %}" />
+                           id="id_name"
+                           value="{% if form.data.name %}{{form.data.name}}{% else %}{{form.initial.name}}{% endif %}" />
                     <p class="help-block">Name is a required field</p>
                 </div>
             </div>    
             <div class="visualclear"></div>
             <div class="form-group {% if form.email.errors %}has-error{% endif %}">
-                <label for="email" class="col-sm-2 control-label">E-mail Address</label>
+                <label for="id_email" class="col-sm-2 control-label">E-mail Address</label>
                 <div class="col-sm-6">
                     <input class="form-control" type="text" name="email"
-                     value="{% if form.data.email %}{{form.data.email}}{% else %}{{form.initial.email}}{% endif %}" />
+                           id="id_email"
+                           value="{% if form.data.email %}{{form.data.email}}{% else %}{{form.initial.email}}{% endif %}" />
                     <div class="visualclear"></div>                
                     <p class="help-block">A valid e-mail address is required.</p>
                 </div>
@@ -44,7 +45,7 @@
             <br />
             <div class="visualclear"></div>
             <div class="form-group {% if form.subject.errors %}has-error{% endif %}">
-                <label for="subject"  class="col-sm-2 control-label">Subject</label>
+                <label for="id_subject"  class="col-sm-2 control-label">Subject</label>
                 <div class="col-sm-6">
                     {{form.subject}}
                     <p class="help-block">Subject is a required field.</p>
@@ -52,7 +53,7 @@
             </div>
             <br />
             <div class="form-group {% if form.description.errors %}has-error{% endif %}">
-                <label for="description" class="col-sm-2 control-label">Description</label>
+                <label for="id_description" class="col-sm-2 control-label">Description</label>
                 <div class="col-sm-6">
                     {{form.description}}
                     <p class="help-block">Description is a required field.</p>
