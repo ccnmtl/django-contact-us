@@ -33,7 +33,7 @@ class ContactUsForm(forms.Form):
     def clean(self):
         cleaned_data = super(ContactUsForm, self).clean()
 
-        if cleaned_data['subject'] == '-----':
+        if cleaned_data.get('subject', None) == '-----':
             self._errors["subject"] = self.error_class([
                 "Please specify a subject"])
 
