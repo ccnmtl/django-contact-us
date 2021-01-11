@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2019, Columbia University Center for Teaching and Learning
+# Copyright (c) 2015-2021, Columbia University Center for Teaching and Learning
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,7 +27,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-contact-us",
-    version="0.4.3",
+    version="0.4.4",
     author="Susan Dreher",
     author_email="sdreher@columbia.edu",
     url="https://github.com/ccnmtl/django-contact-us",
