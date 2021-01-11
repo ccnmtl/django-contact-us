@@ -1,6 +1,7 @@
-0.4.4
+0.4.4 (2021-01-11)
 ==================
 * Fix label "for" attribute on contact form
+* Fix KeyError exception when subject is null
 
 0.4.3 (2019-11-18)
 ==================
