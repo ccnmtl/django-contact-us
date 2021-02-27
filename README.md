@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/ccnmtl/django-contact-us.svg?branch=master)](https://travis-ci.org/ccnmtl/django-contact-us)
+[![Actions Status](https://github.com/ccnmtl/django-contact-us/workflows/build-and-test/badge.svg)](https://github.com/ccnmtl/django-contact-us/actions)
+[![Coverage Status](https://coveralls.io/repos/github/ccnmtl/django-contact-us/badge.svg?branch=master)](https://coveralls.io/github/ccnmtl/django-contact-us?branch=master)
 
 Simple, reusable "contact us" form implementation for Django.
 
