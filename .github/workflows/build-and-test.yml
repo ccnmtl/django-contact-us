@@ -1,0 +1,12 @@
+name: build-and-test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+          python-version: [3.6]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build with Makefile
+        run: make
