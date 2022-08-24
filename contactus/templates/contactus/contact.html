@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Contact Us{% endblock %}
+{% block title %}Contact Us | {% endblock %}
 
 {% block css %}
     <style>
@@ -17,9 +17,10 @@
     </style>
 {% endblock %}
 
+{% block pagetitle %}Contact Us{% endblock %}
+
 {% block content %}
     <div class="contact_us_form">
-        <h2 class="title">Contact Us</h2>
         <br />
         <form action="." method="post" name="feedback" class="form-horizontal">{% csrf_token %}
             <div class="form-group {% if form.name.errors %}has-error{% endif %}">
