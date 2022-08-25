@@ -27,19 +27,18 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-contact-us",
-    version="1.0.0",
+    version="1.1.0",
     author="Susan Dreher",
     author_email="sdreher@columbia.edu",
     url="https://github.com/ccnmtl/django-contact-us",
     description="Django Contact Us Form",
     long_description="reusable django form and view for 'contact us' functionality",
-    install_requires = ['Django'],
-    scripts = [],
-    license = "BSD",
-    platforms = ["any"],
+    install_requires=['Django'],
+    scripts=[],
+    license="BSD",
+    platforms=["any"],
     zip_safe=False,
-    package_data = {'' : ['*.*']},
+    package_data={'': ['*.*']},
     packages=['contactus'],
     include_package_data=True,
-    )
-    
+)
