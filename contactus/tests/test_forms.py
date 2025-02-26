@@ -13,7 +13,7 @@ class ContactUsFormTest(TestCase):
         }
 
         form.clean()
-        self.assertEquals(len(form._errors.keys()), 0)
+        self.assertEqual(len(form._errors.keys()), 0)
 
     def test_form_clean_errors(self):
         form = ContactUsForm()
@@ -24,6 +24,6 @@ class ContactUsFormTest(TestCase):
         }
 
         form.clean()
-        self.assertEquals(len(form._errors.keys()), 2)
+        self.assertEqual(len(form._errors.keys()), 2)
         self.assertTrue('decoy' in form._errors)
         self.assertTrue('subject' in form._errors)
