@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2021, Columbia University Center for Teaching and Learning
+# Copyright (c) 2015-2025, Columbia University Center for Teaching and Learning
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,7 +29,7 @@ setup(
     name="django-contact-us",
     version="1.1.0",
     author="Susan Dreher",
-    author_email="sdreher@columbia.edu",
+    author_email="ctl-dev@columbia.edu",
     url="https://github.com/ccnmtl/django-contact-us",
     description="Django Contact Us Form",
     long_description="reusable django form and view for 'contact us' functionality",
