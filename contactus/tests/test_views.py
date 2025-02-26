@@ -28,8 +28,8 @@ class ContactUsViewTest(TestCase):
             first_name='Foo', last_name='Bar', email='foo@bar.com')
 
         initial = view.get_initial()
-        self.assertEquals(initial['name'], 'Foo Bar')
-        self.assertEquals(initial['email'], 'foo@bar.com')
+        self.assertEqual(initial['name'], 'Foo Bar')
+        self.assertEqual(initial['email'], 'foo@bar.com')
 
         # a subsequent call using an anonymous session returns a clean initial
         view.request.session = {}
@@ -56,7 +56,7 @@ class ContactUsViewTest(TestCase):
 
         self.assertEqual(mail.outbox[0].subject,
                          view.subject)
-        self.assertEquals(mail.outbox[0].from_email,
-                          'root@localhost')
-        self.assertEquals(mail.outbox[0].to,
-                          [settings.CONTACT_US_EMAIL])
+        self.assertEqual(mail.outbox[0].from_email,
+                         'root@localhost')
+        self.assertEqual(mail.outbox[0].to,
+                         [settings.CONTACT_US_EMAIL])

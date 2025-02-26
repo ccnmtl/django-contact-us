@@ -2,10 +2,10 @@ PY_DIRS=contactus
 VE ?= ./ve
 SYS_PYTHON ?= python3
 PY_SENTINAL ?= $(VE)/sentinal
-PIP_VERSION ?= 21.0.1
+PIP_VERSION ?= 25.0.1
 MAX_COMPLEXITY ?= 8
 PY_DIRS ?= $(APP)
-DJANGO ?= "Django==3.2.10"
+DJANGO ?= "Django==4.2.19"
 
 FLAKE8 ?= $(VE)/bin/flake8
 PIP ?= $(VE)/bin/pip
