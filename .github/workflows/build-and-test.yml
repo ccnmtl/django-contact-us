@@ -7,6 +7,6 @@ jobs:
       matrix:
           python-version: ["3.12"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build with Makefile
         run: make
