@@ -2,16 +2,16 @@ PY_DIRS=contactus
 VE ?= ./ve
 SYS_PYTHON ?= python3
 PY_SENTINAL ?= $(VE)/sentinal
-PIP_VERSION ?= 25.0.1
+PIP_VERSION ?= 26.0.1
 MAX_COMPLEXITY ?= 8
 PY_DIRS ?= $(APP)
-DJANGO ?= "Django==4.2.19"
+DJANGO ?= "Django==5.2.13"
 
 FLAKE8 ?= $(VE)/bin/flake8
 PIP ?= $(VE)/bin/pip
 COVERAGE ?=$(VE)/bin/coverage
 
-all: flake8 coverage
+all: flake8 coverage test
 
 clean:
 	rm -rf $(VE)
@@ -28,7 +28,7 @@ $(PY_SENTINAL):
 	$(PIP) install coveralls
 	touch $@
 
-test: $(REQUIREMENTS) $(PY_SENTINAL)
+test: $(PY_SENTINAL)
 	./ve/bin/python runtests.py
 
 flake8: $(PY_SENTINAL)
